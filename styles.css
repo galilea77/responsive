@@ -1,0 +1,113 @@
+@charset "UTF-8";
+* {margin: 0; padding: 0;}
+body {
+    font-family: Arial, sans-serif;
+    background: rgba(248, 165, 69); 
+} #page {
+    max-width: 1050px;
+    height: 950px;
+    background: rgb(46, 88, 166);
+    margin: 120px auto;
+    box-shadow: 2px 3px 6px rgb(2, 30, 72);
+    z-index: 0;
+} header {
+    width: 928px;
+    margin: 0 auto;
+} header img {
+    width: 100%;
+} header h1 {
+    font: 67pt/1.4em 'Unkempt';
+    text-align: center;
+    margin-top: 55px;
+    text-shadow: 2px 3px 6px rgb(4, 23, 57);
+    color: rgb(191, 222, 250);
+    padding-top: 60px;
+} main {
+    max-width: 768px;
+    height: 768px;
+    margin: 24px auto;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: 284px;
+    gap: 50px;
+    justify-content: center;
+    padding-top: 24px;
+} img:nth-child(4), img:nth-child(3), img:nth-child(2), img:nth-child(1) {
+    width: 384px;
+    height: 282px;
+    box-shadow: 2px 3px 6px rgb(4, 28, 61);
+    } img, .zoom {
+        width: 400px;
+        height: 500px;
+        transition: transform 0.5s;
+        } .zoom {
+        background: url("thumb-tulip.jpg");
+        background-size: 100%;
+        background-position: center;
+    } img:hover {
+       // filter: blur(2px);
+       // filter: opacity(0.50);
+       transform: scale(1.03);
+        transition: transform 0.5s;
+    } .zoom:hover {
+        background-size: 105%;
+        transition: background-size 0.5s;
+} .thumbnail-container {
+    text-align: left;
+    position: relative;
+    z-index: 1;
+} .thumbnail {
+    width: 256px;
+    position: absolute;
+    cursor: pointer;
+    transition: filter 0.2s;
+} .thumbnail:hover {
+    filter: drop-shadow(2px 3px 6px gray);
+    transition: filter 0.2s;
+} .modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+} .modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+} .close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+} .close:hover, .close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+} @media only screen and (max-width: 750px) {
+    img {
+        transform: scale(60%);
+        flex-direction: column;
+    } header h1 {
+        font: 25pt/1.6em 'Unkempt';
+        max-width: 30%;
+    } #page {
+        max-width: 70%;
+        margin: 31px;
+        height: 1300px;
+    } main {
+        grid-template-columns: 1fr;
+        gap: 9px;   
+        margin: -30px;
+    } .zoom:hover {
+        background-size: 50%;
+    }
+}
