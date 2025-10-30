@@ -4,12 +4,12 @@ body {
     font-family: Arial, sans-serif;
     background: rgba(248, 165, 69); 
 } #page {
-    max-width: 1050px;
-    height: 950px;
-    background: rgb(46, 88, 166);
+    width: 1050px;
+    max-width: 100%;
+    height: auto;
+    background: rgb(46, 88,166);
     margin: 120px auto;
-    box-shadow: 2px 3px 6px rgb(2, 30, 72);
-    z-index: 0;
+    box-shadow: 2px 3px 6px rgb(2,30,72);
 } header {
     width: 928px;
     margin: 0 auto;
@@ -23,91 +23,40 @@ body {
     color: rgb(191, 222, 250);
     padding-top: 60px;
 } main {
-    max-width: 768px;
-    height: 768px;
+    width: 928px;
+    max-width: 98%;
+    height: auto;
     margin: 24px auto;
     display: grid;
-    grid-template-columns: auto auto;
-    grid-template-rows: 284px;
+    grid-template: repeat(2,auto) / repeat(2,auto);
     gap: 50px;
+    padding: 24px 0 72px 0;
     justify-content: center;
-    padding-top: 24px;
-} img:nth-child(4), img:nth-child(3), img:nth-child(2), img:nth-child(1) {
+} img {
     width: 384px;
-    height: 282px;
-    box-shadow: 2px 3px 6px rgb(4, 28, 61);
-    } img, .zoom {
-        width: 400px;
-        height: 500px;
-        transition: transform 0.5s;
-        } .zoom {
-        background: url("thumb-tulip.jpg");
-        background-size: 100%;
-        background-position: center;
-    } img:hover {
-       // filter: blur(2px);
-       // filter: opacity(0.50);
-       transform: scale(1.03);
-        transition: transform 0.5s;
-    } .zoom:hover {
-        background-size: 105%;
-        transition: background-size 0.5s;
-} .thumbnail-container {
-    text-align: left;
-    position: relative;
-    z-index: 1;
-} .thumbnail {
-    width: 256px;
-    position: absolute;
-    cursor: pointer;
-    transition: filter 0.2s;
-} .thumbnail:hover {
-    filter: drop-shadow(2px 3px 6px gray);
-    transition: filter 0.2s;
-} .modal {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.8);
-} .modal-content {
-    margin: auto;
-    display: block;
-    width: 80%;
-    max-width: 700px;
-} .close {
-    position: absolute;
-    top: 15px;
-    right: 35px;
-    color: #fff;
-    font-size: 40px;
-    font-weight: bold;
-    transition: 0.3s;
-    cursor: pointer;
-} .close:hover, .close:focus {
-    color: #bbb;
-    text-decoration: none;
-    cursor: pointer;
+    height: 280px;
+    box-shadow: 2px 3px 6px rgb(4,28,61);
+} img:hover {
+    transform: scale(1.03);
+    transition: transform 0.5s;
 } @media only screen and (max-width: 750px) {
-    img {
-        transform: scale(60%);
-        flex-direction: column;
-    } header h1 {
-        font: 25pt/1.6em 'Unkempt';
-        max-width: 30%;
-    } #page {
-        max-width: 70%;
-        margin: 31px;
-        height: 1300px;
+    #page {
+        max-width: 98%;
+        margin: 0 auto;
+        height: auto;
     } main {
-        grid-template-columns: 1fr;
-        gap: 9px;   
-        margin: -30px;
-    } .zoom:hover {
-        background-size: 50%;
+        width: 768px;
+        max-width: 95%;
+        height: auto;
+        margin: 0 auto;
+        grid-template: repeat(4,auto) / auto;
+        justify-items: center;
+    } img {
+        width: 95vw;
+        height: auto;
+    } header {
+        max-width: 100%;
+    } header h1 {
+        font: 64pt/1.6em 'Unkempt';
     }
 }
